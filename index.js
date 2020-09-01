@@ -18,7 +18,7 @@ const players = [
 	new Player('Adam Jones', 'Baltimore Orioles', 'Outfielder'),
 	new Player('Andy Pettitte', 'New York Yankees', 'Pitcher'),
 	new Player('David Ortiz', 'Boston Red Sox', 'Designated Hitter'),
-	new Player('Derek Jeter', 'New York Yankees', 'Infielder'),
+	new Player('Derek Jeter', 'New York Yankees', 'Shortstop'),
 	new Player('Hank Aaron', 'Atlanta Braves', 'Outfielder'),
 	new Player('Jorge Posada', 'New York Yankees', 'Catcher'),
 	new Player('Yogi Berra', 'New York Yankees', 'Catcher'),
@@ -70,6 +70,19 @@ function Gallery(gallery) {
 	const nextButton = modal.querySelector('.next');
 	let currentImage;
 
+
+
+	function openModal() {
+		console.info('Opening modal.');
+		// Check if modal is already open
+		if(modal.matches('.open')) {
+			console.info('Modal already open.')
+			return;
+		}
+		modal.classList.add('open');
+	}
+
+
 	// show images
 	function showImage(el) {
 		if(!el) {
@@ -82,6 +95,7 @@ function Gallery(gallery) {
 		modal.querySelector('h2').textContent = el.title;
 		modal.querySelector('figure p').textContent = el.dataset.description; // the el.dataset.description isn't evaluating to anything
 		currentImage = el;
+		openModal();
 	}
 
 	images.forEach(image => 
