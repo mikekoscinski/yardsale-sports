@@ -30,7 +30,7 @@ function makePlayerCardFrontHTML (player) {
 		<div class="card">
 			<img src="./images/${player.file}" alt="${player.name} autographed baseball" title="${player.name}">
 			<div class ="caption autograph">
-				<p>${player.name}</p>
+				<h3>${player.name}</h3>
 				<p>${player.team}</p>
 				<p>${player.position}</p>
 			</div>
