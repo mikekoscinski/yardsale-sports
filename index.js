@@ -1,4 +1,4 @@
-// TODO: Will need to revise this (and the class names) once I add sports cards to the site as well
+// TODO: Will need to revise the div names (and the class names) once I add sports cards to the site as well. '.gallery' will need to become 'gallery autographs' or something like that
 
 autographGallery = document.querySelector('.gallery');
 
@@ -25,7 +25,7 @@ const players = [
 ];
 
 // Generate HTML cards for each player
-function makePlayerCardHTML (player) {
+function makePlayerCardFrontHTML (player) {
 	return cardHTML = `
 		<div class="card">
 			<img src="./images/${player.file}" alt="${player.name} autographed baseball" title="${player.name}">
@@ -38,22 +38,30 @@ function makePlayerCardHTML (player) {
 	`;
 }
 
+// For each player, generate a playerCardHTML snippet & insert it into the autographGallery
 players.forEach(el => {
-	const playerCardHTML = makePlayerCardHTML(el);
+	const playerCardHTML = makePlayerCardFrontHTML(el);
 	autographGallery.insertAdjacentHTML('beforeend', playerCardHTML);
 });
 
 
-
-
-
-// then makePlayerCard function that passes parameters to the player card, returns the card & inserts it into the gallery div
-
-
-
 // When user clicks into modal, generate new HTML? Or should I pre-generate? (Each player will have different... Could have arrays for each player's accolades, then accolades.forEach generate a <ul> to be added to the description card within the <p>accolades</p>)
 
-// TODO: ignore this until i have files for each photo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TODO: add these to 'players' array once i find images for each
 const playersToAddLater = [
 	new Player('Akinori Iwamura',	'Tampa Bay Rays', 'Infielder'),
 	new Player('Alex Gordon',	'Kansas City Royals', 'Outfielder'),
