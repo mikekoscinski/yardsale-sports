@@ -44,8 +44,6 @@ function makePlayerCardFrontHTML (player) {
 	`;
 }
 
-// ${player.position} for the ${player.team}
-
 // For each player, generate a playerCardHTML snippet & insert it into the autographGallery
 players.forEach(el => {
 	const playerCardHTML = makePlayerCardFrontHTML(el);
@@ -57,49 +55,47 @@ players.forEach(el => {
 
 // Activate modal when clicked
 function Gallery(gallery) {
-	if(!gallery) {
-		throw new Error('No gallery found.');
-	}
+	if(!gallery) throw new Error('No gallery found.');
 
-	// Select images
 	const images = Array.from(gallery.querySelectorAll('img'));
-
-	// Select buttons
 	const modal = document.querySelector('.modal');
 	const previousButton = modal.querySelector('.previous');
 	const nextButton = modal.querySelector('.next');
 	let currentImage;
 
-
-
 	function openModal() {
 		console.info('Opening modal.');
 		// Check if modal is already open
-		if(modal.matches('.open')) {
-			console.info('Modal already open.')
-			return;
-		}
+		if(modal.matches('.open')) return console.info('Modal already open.');
 		modal.classList.add('open');
+
+		// Event listeners for when modal is open
+		window.addEventListener('keyup', handleKeyUp);
+		nextButton.addEventListener('click', showNextImage);
 	}
 
 	function closeModal() {
 		modal.classList.remove('open');
-		// TODO: Add event listeners for clicks and keyboards
+		window.removeEventListener('keyup', handleKeyUp);
+		nextButton.removeEventListener('click', showNextImage);
 	}
 
 	function handleOutsideClick(event) {
-		if (event.target === event.currentTarget) {
-			closeModal();
-		}
+		if (event.target === event.currentTarget) return closeModal();
 	}
 
+	function handleKeyUp(event) {
+		if (event.key === 'Escape') return closeModal();
+	}
+
+	function showNextImage() {
+
+	}
 
 	// show images
 	function showImage(el) {
-		if(!el) {
-			console.info('No image to show.');
-			return;
-		}
+		if(!el) return console.info('No image to show.');
+
 		// Update the modal with this info
 		console.log(el);
 		modal.querySelector('img').src = el.src;
