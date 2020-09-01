@@ -82,6 +82,17 @@ function Gallery(gallery) {
 		modal.classList.add('open');
 	}
 
+	function closeModal() {
+		modal.classList.remove('open');
+		// TODO: Add event listeners for clicks and keyboards
+	}
+
+	function handleOutsideClick(event) {
+		if (event.target === event.currentTarget) {
+			closeModal();
+		}
+	}
+
 
 	// show images
 	function showImage(el) {
@@ -98,10 +109,12 @@ function Gallery(gallery) {
 		openModal();
 	}
 
+	// Event listeners:
 	images.forEach(image => 
 		image.addEventListener('click', (event) => showImage(event.currentTarget))
 	);
-
+	
+	modal.addEventListener('click', handleOutsideClick);
 	
 }
 
