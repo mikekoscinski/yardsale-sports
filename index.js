@@ -28,8 +28,14 @@ const players = [
 function makePlayerCardFrontHTML (player) {
 	return cardHTML = `
 		<div class="card">
-			<img src="./images/${player.file}" alt="${player.name} autographed baseball" title="${player.name}">
-			<div class ="caption autograph">
+			<img 
+				src="./images/${player.file}" 
+				alt="${player.name} autographed baseball" 
+				tabindex="0" 
+				title="${player.name}" 
+				data-description="${player.position} for the ${player.team}"
+			>
+			<div class="caption">
 				<h3>${player.name}</h3>
 				<p>${player.team}</p>
 				<p>${player.position}</p>
@@ -38,6 +44,8 @@ function makePlayerCardFrontHTML (player) {
 	`;
 }
 
+// ${player.position} for the ${player.team}
+
 // For each player, generate a playerCardHTML snippet & insert it into the autographGallery
 players.forEach(el => {
 	const playerCardHTML = makePlayerCardFrontHTML(el);
@@ -45,6 +53,93 @@ players.forEach(el => {
 });
 
 // When user clicks into modal, generate new HTML? Or should I pre-generate? (Each player will have different... Could have arrays for each player's accolades, then accolades.forEach generate a <ul> to be added to the description card within the <p>accolades</p>)
+
+
+// Activate modal when clicked
+function Gallery(gallery) {
+	if(!gallery) {
+		throw new Error('No gallery found.');
+	}
+
+	// Select images
+	const images = Array.from(gallery.querySelectorAll('img'));
+
+	// Select buttons
+	const modal = document.querySelector('.modal');
+	const previousButton = modal.querySelector('.previous');
+	const nextButton = modal.querySelector('.next');
+	let currentImage;
+
+	// show images
+	function showImage(el) {
+		if(!el) {
+			console.info('No image to show.');
+			return;
+		}
+		// Update the modal with this info
+		console.log(el);
+		modal.querySelector('img').src = el.src;
+		modal.querySelector('h2').textContent = el.title;
+		modal.querySelector('figure p').textContent = el.dataset.description; // the el.dataset.description isn't evaluating to anything
+		currentImage = el;
+	}
+
+	images.forEach(image => 
+		image.addEventListener('click', (event) => showImage(event.currentTarget))
+	);
+
+	
+}
+
+const gallery1 = Gallery(autographGallery);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
