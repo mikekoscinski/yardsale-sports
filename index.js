@@ -44,7 +44,6 @@ players.forEach(el => {
 	autographGallery.insertAdjacentHTML('beforeend', playerCardHTML);
 });
 
-
 // When user clicks into modal, generate new HTML? Or should I pre-generate? (Each player will have different... Could have arrays for each player's accolades, then accolades.forEach generate a <ul> to be added to the description card within the <p>accolades</p>)
 
 
