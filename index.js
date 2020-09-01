@@ -55,7 +55,7 @@ players.forEach(el => {
 
 // Activate modal when clicked
 function Gallery(gallery) {
-	if(!gallery) throw new Error('No gallery found.');
+	if (!gallery) throw new Error('No gallery found.');
 
 	const images = Array.from(gallery.querySelectorAll('img'));
 	const modal = document.querySelector('.modal');
@@ -66,7 +66,7 @@ function Gallery(gallery) {
 	function openModal() {
 		console.info('Opening modal.');
 		// Check if modal is already open
-		if(modal.matches('.open')) return console.info('Modal already open.');
+		if (modal.matches('.open')) return;
 		modal.classList.add('open');
 
 		// Event listeners for when modal is open
@@ -89,18 +89,27 @@ function Gallery(gallery) {
 	}
 
 	function showNextImage() {
-
+		showImage(currentImage.nextElementSibling); // ERROR: Need to refer to the next image
+		console.log(currentImage.nextElementSibling);
 	}
+
+	// TODO: This does not currently tie to the underlying HTML
+	// need to figure out a way to tie it back.
+	
+		// Could Loop over each image in an array? E.g. Ortiz == index 2; 
+		// i++ until end, then start over at index 0, and vice-versa?
+
+
 
 	// show images
 	function showImage(el) {
-		if(!el) return console.info('No image to show.');
+		if (!el) return console.info('No image to show.');
 
 		// Update the modal with this info
 		console.log(el);
 		modal.querySelector('img').src = el.src;
 		modal.querySelector('h2').textContent = el.title;
-		modal.querySelector('figure p').textContent = el.dataset.description; // the el.dataset.description isn't evaluating to anything
+		modal.querySelector('figure p').textContent = el.dataset.description;
 		currentImage = el;
 		openModal();
 	}
