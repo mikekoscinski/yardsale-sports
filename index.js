@@ -1,44 +1,49 @@
+autographGallery = document.querySelector('.autographs');
+
 function formatNameForFile(name) {
 	return formattedName = name.toLowerCase().replace(/ /g, '-');
 }
 
-function Player(name, team) {
+function Player(name, team, position) {
 	this.name = name;
 	this.team = team;
+	this.position = position;
 	this.file = `${formatNameForFile(this.name)}-autograph.jpg`;
 }
 
 // First, generate Player object for each individual autograph
-
-const ADAM_JONES = new Player('Adam Jones', 'Baltimore Orioles');
-const ANDY_PETTITTE = new Player('Andy Pettitte', 'New York Yankees');
-const DAVID_ORTIZ = new Player('David Ortiz', 'Boston Red Sox');
-const DEREK_JETER = new Player('Derek Jeter', 'New York Yankees');
-const HANK_AARON = new Player('Hank Aaron', 'Atlanta Braves');
-const JORGE_POSADA = new Player('Jorge Posada', 'New York Yankees');
-const YOGI_BERRA = new Player('Yogi Berra', 'New York Yankees');
-
-// Store each Player object in an array - we will use .forEach method on them later
+// Store each Player object in an array (avail for forEach)
 
 const players = [
-	ADAM_JONES,
-	ANDY_PETTITTE,
-	DAVID_ORTIZ,
-	DEREK_JETER,
-	HANK_AARON,
-	JORGE_POSADA,
-	YOGI_BERRA,
+	new Player('Adam Jones', 'Baltimore Orioles', 'Outfielder'),
+	new Player('Andy Pettitte', 'New York Yankees', 'Pitcher'),
+	new Player('David Ortiz', 'Boston Red Sox', 'Designated Hitter'),
+	new Player('Derek Jeter', 'New York Yankees', 'Shortstop'),
+	new Player('Hank Aaron', 'Atlanta Braves', 'Outfielder'),
+	new Player('Jorge Posada', 'New York Yankees', 'Catcher'),
+	new Player('Yogi Berra', 'New York Yankees', 'Catcher'),
 ];
 
-console.log(players);
+// Then, generate HTML cards for each player
 
+function makePlayerCardHTML (player) {
+	return cardHTML = `
+		<div class="card autograph">
+			<img src="${player.file}" alt="${player.name} autographed baseball" title="${player.name}">
+			<div class ="caption autograph">
+				<p>${player.name}</p>
+				<p>${player.team}</p>
+				<p>${player.position}</p>
+			</div>
+		</div>
+	`;
+}
 
-// Then, generate HTML cards for each player. These will be visible on the DOM
 
 players.forEach(el => {
-	// insert playerCard HTML
-});
+	const playerCardHTML = makePlayerCardHTML(el);
 
+});
 
 
 
