@@ -62,7 +62,6 @@ function Gallery(gallery) {
 	let currentImage;
 
 	function openModal() {
-		console.info('Opening modal.');
 		// Check if modal is already open
 		if (modal.matches('.open')) return;
 		modal.classList.add('open');
@@ -87,9 +86,7 @@ function Gallery(gallery) {
 	}
 
 	function showNextImage() {
-		console.log('Current image: ', currentImage);
-		showImage(currentImage.parentElement.nextElementSibling.firstElementChild); // Walk back up the DOM tree, find the next <card>, then select the <img> from the <card>. Note that <img> MUST be the first child element. (Do not modify the order of <div>s created by makePlayerCardHTML)
-		console.log('Next image: ', currentImage.parentElement.nextElementSibling);
+		showImage(currentImage.parentElement.nextElementSibling.firstElementChild); // Note that <img> MUST be the first child element. Do not modify <div> creation order in makePlayerCardHTML().
 	}
 
 	// show images
