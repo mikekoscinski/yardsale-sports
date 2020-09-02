@@ -12,8 +12,6 @@ function Player(name, team, position) {
 	this.position = position;
 	this.file = `${formatNameForFile(this.name)}-autograph.jpg`;
 }
-
-// Generate Player objects; store in Array (use forEach later)
 const players = [
 	new Player('Adam Jones', 'Baltimore Orioles', 'Outfielder'),
 	new Player('Andy Pettitte', 'New York Yankees', 'Pitcher'),
@@ -24,9 +22,8 @@ const players = [
 	new Player('Yogi Berra', 'New York Yankees', 'Catcher'),
 ];
 
-// Generate HTML cards for each player
-function makePlayerCardHTML (player) {
-	return cardHTML = `
+function makePlayerHTMLCard (player) {
+	return HTMLcard = `
 		<div class="card">
 			<img 
 				src="./images/${player.file}" 
@@ -47,11 +44,10 @@ function makePlayerCardHTML (player) {
 }
 // Insert these HTML cards into the DOM
 players.forEach(el => {
-	const playerCardHTML = makePlayerCardHTML(el);
-	staticAutographGallery.insertAdjacentHTML('beforeend', playerCardHTML);
+	const playerHTMLCard = makePlayerHTMLCard(el);
+	staticAutographGallery.insertAdjacentHTML('beforeend', playerHTMLCard);
 });
 
-// Activate modal when clicked
 function Gallery(gallery) {
 	if (!gallery) throw new Error('No gallery found.');
 
@@ -64,7 +60,6 @@ function Gallery(gallery) {
 	function openModal() {
 		if (modal.matches('.open')) return;
 		modal.classList.add('open');
-
 		window.addEventListener('keyup', handleKeyUp);
 		nextButton.addEventListener('click', showNextImage);
 		previousButton.addEventListener('click', showPreviousImage);
@@ -107,7 +102,6 @@ function Gallery(gallery) {
 
 	function showImage(el) {
 		if (!el) return console.info('No image to show.');
-
 		// Update the modal with this info
 		modal.querySelector('img').src = el.src;
 		modal.querySelector('h2').textContent = el.title;
@@ -118,10 +112,14 @@ function Gallery(gallery) {
 
 	// Event listeners:
 	images.forEach(image => 
-		image.addEventListener('click', (event) => showImage(event.currentTarget))
+		image.addEventListener('click', event => showImage(event.currentTarget))
 	);
+	images.forEach(image => 
+		image.addEventListener('keyup', event => { 
+			if (event.key === 'Enter') return showImage(event.currentTarget) 
+		}
+	));
 	modal.addEventListener('click', handleOutsideClick);
-	
 }
 
 const liveAutographGallery = Gallery(staticAutographGallery);
