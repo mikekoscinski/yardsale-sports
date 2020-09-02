@@ -87,7 +87,6 @@ function Gallery(gallery) {
 
 	function showNextImage() {
 		const firstImage = gallery.firstElementChild.firstElementChild;
-		console.log(firstImage);
 		const isThereANextImage = Boolean(currentImage.parentElement.nextElementSibling);
 		const nextImage = (!isThereANextImage) ? 
 			null :
@@ -97,7 +96,6 @@ function Gallery(gallery) {
 
 	function showPreviousImage() {
 		const lastImage = gallery.lastElementChild.firstElementChild;
-		console.log(lastImage);
 		const isThereAPreviousImage = Boolean(currentImage.parentElement.previousElementSibling);
 		const previousImage = (!isThereAPreviousImage) ? 
 			null :
