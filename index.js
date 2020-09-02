@@ -1,6 +1,6 @@
 // TODO: Will need to revise the div names (and the class names) once I add sports cards to the site as well. '.gallery' will need to become 'gallery autographs' or something like that
 
-autographGallery = document.querySelector('.gallery');
+const staticAutographGallery = document.querySelector('.gallery');
 
 function formatNameForFile(name) {
 	return formattedName = name.toLowerCase().replace(/ /g, '-');
@@ -25,14 +25,16 @@ const players = [
 ];
 
 // Generate HTML cards for each player
-function makePlayerCardFrontHTML (player) {
+function makePlayerCardHTML (player) {
 	return cardHTML = `
 		<div class="card">
 			<img 
 				src="./images/${player.file}" 
 				alt="${player.name} autographed baseball" 
 				tabindex="0" 
-				title="${player.name}" 
+				title="${player.name}"
+				data-team="${player.team}"
+				data-position="${player.position}"
 				data-description="${player.position} for the ${player.team}"
 			>
 			<div class="caption">
@@ -43,15 +45,11 @@ function makePlayerCardFrontHTML (player) {
 		</div>
 	`;
 }
-
-// For each player, generate a playerCardHTML snippet & insert it into the autographGallery
+// Insert these HTML cards into the DOM
 players.forEach(el => {
-	const playerCardHTML = makePlayerCardFrontHTML(el);
-	autographGallery.insertAdjacentHTML('beforeend', playerCardHTML);
+	const playerCardHTML = makePlayerCardHTML(el);
+	staticAutographGallery.insertAdjacentHTML('beforeend', playerCardHTML);
 });
-
-// When user clicks into modal, generate new HTML? Or should I pre-generate? (Each player will have different... Could have arrays for each player's accolades, then accolades.forEach generate a <ul> to be added to the description card within the <p>accolades</p>)
-
 
 // Activate modal when clicked
 function Gallery(gallery) {
@@ -89,24 +87,16 @@ function Gallery(gallery) {
 	}
 
 	function showNextImage() {
-		showImage(currentImage.nextElementSibling); // ERROR: Need to refer to the next image
-		console.log(currentImage.nextElementSibling);
+		console.log('Current image: ', currentImage);
+		showImage(currentImage.parentElement.nextElementSibling.firstElementChild); // Walk back up the DOM tree, find the next <card>, then select the <img> from the <card>. Note that <img> MUST be the first child element. (Do not modify the order of <div>s created by makePlayerCardHTML)
+		console.log('Next image: ', currentImage.parentElement.nextElementSibling);
 	}
-
-	// TODO: This does not currently tie to the underlying HTML
-	// need to figure out a way to tie it back.
-	
-		// Could Loop over each image in an array? E.g. Ortiz == index 2; 
-		// i++ until end, then start over at index 0, and vice-versa?
-
-
 
 	// show images
 	function showImage(el) {
 		if (!el) return console.info('No image to show.');
 
 		// Update the modal with this info
-		console.log(el);
 		modal.querySelector('img').src = el.src;
 		modal.querySelector('h2').textContent = el.title;
 		modal.querySelector('figure p').textContent = el.dataset.description;
@@ -123,7 +113,7 @@ function Gallery(gallery) {
 	
 }
 
-const gallery1 = Gallery(autographGallery);
+const liveAutographGallery = Gallery(staticAutographGallery);
 
 
 
