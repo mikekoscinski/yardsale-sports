@@ -83,6 +83,8 @@ function Gallery(gallery) {
 
 	function handleKeyUp(event) {
 		if (event.key === 'Escape') return closeModal();
+		if (event.key === 'ArrowRight') return showNextImage();
+		if (event.key === 'ArrowLeft') return showPreviousImage();
 	}
 
 	function showNextImage() {
