@@ -62,11 +62,9 @@ function Gallery(gallery) {
 	let currentImage;
 
 	function openModal() {
-		// Check if modal is already open
 		if (modal.matches('.open')) return;
 		modal.classList.add('open');
 
-		// Event listeners for when modal is open
 		window.addEventListener('keyup', handleKeyUp);
 		nextButton.addEventListener('click', showNextImage);
 	}
@@ -86,7 +84,12 @@ function Gallery(gallery) {
 	}
 
 	function showNextImage() {
-		showImage(currentImage.parentElement.nextElementSibling.firstElementChild); // Note that <img> MUST be the first child element. Do not modify <div> creation order in makePlayerCardHTML().
+		const firstImage = gallery.firstElementChild.firstElementChild;
+		const thereIsANextImage = Boolean(currentImage.parentElement.nextElementSibling);
+		const nextImage = (!thereIsANextImage) ? 
+			null :
+			currentImage.parentElement.nextElementSibling.firstElementChild;
+		showImage(nextImage || firstImage);
 	}
 
 	// show images
@@ -217,7 +220,7 @@ const playersToAddLater = [
 	new Player('Scott Kazmir',	'Tampa Bay Rays', 'Pitcher'),
 	new Player('Sean Casey',	'Boston Red Sox', 'Infielder'),
 	new Player('Terry Francona', 'Boston Red Sox', 'Manager'),
-	new Player('Tim Kurkjian', 'ESPN', 'Reporter'),
+	new Player('Tim Kurkjian', 'ESPN Network', 'Reporter'),
 	new Player('Tim Teufel', 'New York Mets', 'Infielder'),
 	new Player('Torii Hunter', 'Los Angeles Angels', 'Outfielder'),
 ];
