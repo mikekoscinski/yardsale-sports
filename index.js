@@ -1,5 +1,7 @@
 // TODO: Will need to revise the div names (and the class names) once I add sports cards to the site as well. '.gallery' will need to become 'gallery autographs' or something like that
 
+// TODO: Update CSS
+
 const staticAutographGallery = document.querySelector('.gallery');
 
 function formatNameForFile(name) {
