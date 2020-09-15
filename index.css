@@ -58,7 +58,7 @@ body {
 }
 
 /* Mobile navbar */
-.mobile-navbar-button {
+.navbar-button {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -69,7 +69,7 @@ body {
   height: 21px;
 }
 
-.mobile-navbar-button .bar {
+.navbar-button .bar {
   height: 3px;
   width: 100%;
   background-color: white;
