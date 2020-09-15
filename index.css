@@ -57,10 +57,6 @@ body {
   text-decoration-color: white;
 }
 
-/* Flexbox  */
-
-
-
 /* Mobile navbar */
 .mobile-navbar-button {
   position: absolute;
@@ -72,6 +68,7 @@ body {
   width: 30px;
   height: 21px;
 }
+
 .mobile-navbar-button .bar {
   height: 3px;
   width: 100%;
@@ -125,14 +122,6 @@ body {
   }
 }
 
-
-
-
-
-
-
-
-
 /* Item display card gallery: */
 .gallery {
     padding: 1rem;
@@ -178,6 +167,7 @@ body {
       opacity: 0;
       transition: opacity 0.5s;
     }
+
     .modalInner {
       border-radius: 4px;
       background: white;
@@ -191,27 +181,33 @@ body {
       color: black;
       margin: 3rem;
     }
+
     .modal figure {
       height: 100%;
       display: grid;
       margin: 0;
       grid-template-rows: 1fr auto;
     }
+
     .modal img {
       height: 100%;
       width: 100%;
       object-fit: contain;
     }
+
     .modal.open {
       opacity: 1;
       pointer-events: all;
     }
+
     .modal figcaption {
       padding: 10px;
     }
+
     .modal h2 {
       color: black;
     }
+
     .modal.open .modalInner {
       transform: translateY(0);
     }
