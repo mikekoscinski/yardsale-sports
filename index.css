@@ -103,6 +103,10 @@ body {
     transform: none;
   }
 
+  .box .right {
+    white-space: nowrap;
+  }
+
   .product-links ul {
     width: 100%;
     flex-direction: column;
