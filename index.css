@@ -93,22 +93,22 @@ body {
 		grid-gap: 1rem;
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 150px));
     grid-gap: 20px;
     align-items: stretch;
     background: white;
     }
 
     .gallery .card {
-      padding: 1rem;
+      padding: 0.5rem;
       border:1px solid lightgray;
       text-align: center;
     }
 
     .gallery img {
       text-align: center;
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       object-fit: contain;
     }
 
