@@ -85,21 +85,31 @@ body {
 
 /* Item display card gallery: */
 .gallery {
-		padding: 1rem;
+    padding: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-gap: 1rem;
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 20px;
     align-items: stretch;
     background: white;
     }
+
+    .gallery .card {
+      padding: 1rem;
+      border:1px solid lightgray;
+      text-align: center;
+    }
+
     .gallery img {
-      width: 100%;
-      object-fit: cover;
-      border:1px solid black;
+      text-align: center;
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
     }
 
     /* Expanded product card pop-up modal when item card is clicked */
