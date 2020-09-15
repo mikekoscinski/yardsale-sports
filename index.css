@@ -4,41 +4,65 @@ body {
   font-family: helvetica;
 }
 
-/* Mobile navbar: */
+/* Default navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: #333;
   color: white;
   font-weight: bold;
 }
-.navbar-title a {
-  font-size: 1.0rem;
-  padding: 1.0rem;
-  text-decoration: none;
-  color: white;
-  display: block;
+
+.box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.navbar-links ul {
+
+.box .left {
+  margin-right: auto;
+}
+
+.box .right {
+  margin-left: auto;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar ul {
   margin: 0;
   padding: 0;
   display: flex;
 }
-.navbar-links li {
-  list-style: none;
-}
-.navbar-links li a {
-  font-size: 0.8rem;
-  padding: 1.2rem;
+
+.navbar li a {
+  padding: 1rem;
   text-decoration: none;
   color: white;
   display: block;
 }
-.navbar-links li:hover {
-  background-color: #555;
+
+.navbar .center li a {
+  font-size: 1.0rem;
 }
-.toggle-button {
+
+.navbar .left li a, .navbar .right li a {
+  font-size: 0.8rem;
+}
+
+.navbar .left li:hover, .navbar .right li:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+/* Flexbox  */
+
+
+
+/* Mobile navbar */
+.mobile-navbar-button {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -48,40 +72,66 @@ body {
   width: 30px;
   height: 21px;
 }
-.toggle-button .bar {
+.mobile-navbar-button .bar {
   height: 3px;
   width: 100%;
   background-color: white;
   border-radius: 10px;
 }
 
-/* Mobile navbar visible if width < 700px */
+/* If width < 700px, make mobile-navbar-button visible */
 @media (max-width: 700px) {
-  .toggle-button {
+  .mobile-navbar-button {
     display: flex;
   }
+
   .navbar-links {
     display: none;
     width: 100%;
   }
+
   .navbar {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .navbar-title {
+    float: none;
+    display: block;
+  }
+
+  .navbar-title a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
   .navbar-links ul {
     width: 100%;
     flex-direction: column;
   }
+
   .navbar-links li {
     text-align: center;
   }
+
   .navbar-links li a {
     padding: 0.75rem 1rem;
   }
+
   .navbar-links.active {
     display: flex;
   }
 }
+
+
+
+
+
+
+
+
 
 /* Item display card gallery: */
 .gallery {

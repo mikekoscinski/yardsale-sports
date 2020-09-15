@@ -2,7 +2,7 @@
 
 // TODO: Update CSS
 
-const toggleButton = document.querySelector('.toggle-button');
+const toggleButton = document.querySelector('.mobile-navbar-button');
 const navbarLinks = document.querySelector('.navbar-links');
 
 toggleButton.addEventListener('click', () => {
