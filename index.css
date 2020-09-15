@@ -1,67 +1,53 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: helvetica;
 }
 
+/* Mobile navbar: */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #333;
   color: white;
-}
-
-.navbar-title {
-  font-size: 1.0rem;
   font-weight: bold;
 }
-
 .navbar-title a {
+  font-size: 1.0rem;
+  padding: 1.0rem;
   text-decoration: none;
   color: white;
-  padding: 1rem;
   display: block;
 }
-
-.navbar-title a:hover {
-  background-color: #555;
-}
-
 .navbar-links ul {
   margin: 0;
   padding: 0;
   display: flex;
 }
-
 .navbar-links li {
   list-style: none;
 }
-
 .navbar-links li a {
+  font-size: 0.8rem;
+  padding: 1.2rem;
   text-decoration: none;
   color: white;
-  padding: 1.0rem;
   display: block;
 }
-
 .navbar-links li:hover {
   background-color: #555;
-  /* text-decoration: underline;
-  text-decoration-color: white; */
 }
-
 .toggle-button {
   position: absolute;
   top: 1rem;
-  right: 1.00rem;
+  right: 1rem;
   display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
   height: 21px;
 }
-
 .toggle-button .bar {
   height: 3px;
   width: 100%;
@@ -69,61 +55,54 @@ body {
   border-radius: 10px;
 }
 
-@media (max-width: 500px) {
+/* Mobile navbar visible if width < 700px */
+@media (max-width: 700px) {
   .toggle-button {
     display: flex;
   }
-
   .navbar-links {
     display: none;
     width: 100%;
   }
-
   .navbar {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .navbar-links ul {
     width: 100%;
     flex-direction: column;
   }
-
   .navbar-links li {
     text-align: center;
   }
-
   .navbar-links li a {
     padding: 0.75rem 1rem;
   }
-
   .navbar-links.active {
     display: flex;
   }
-
 }
 
-
+/* Item display card gallery: */
 .gallery {
-		padding: 2rem;
+		padding: 1rem;
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-gap: 2rem;
+		grid-gap: 1rem;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 20px;
     align-items: stretch;
     background: white;
-    padding: 2rem;
     }
-
     .gallery img {
       width: 100%;
       object-fit: cover;
       border:1px solid black;
     }
 
+    /* Expanded product card pop-up modal when item card is clicked */
     .modal {
       position: fixed;
       background: rgba(0, 0, 0, 0.5);
@@ -139,7 +118,6 @@ body {
       opacity: 0;
       transition: opacity 0.5s;
     }
-
     .modalInner {
       border-radius: 4px;
       background: white;
@@ -153,33 +131,27 @@ body {
       color: black;
       margin: 3rem;
     }
-
     .modal figure {
       height: 100%;
       display: grid;
       margin: 0;
       grid-template-rows: 1fr auto;
     }
-
     .modal img {
       height: 100%;
       width: 100%;
       object-fit: contain;
     }
-
     .modal.open {
       opacity: 1;
       pointer-events: all;
     }
-
     .modal figcaption {
       padding: 10px;
     }
-
     .modal h2 {
       color: black;
     }
-
     .modal.open .modalInner {
       transform: translateY(0);
     }
