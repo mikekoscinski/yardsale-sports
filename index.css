@@ -1,10 +1,12 @@
+/* TODO: Title must be absolutely centered */
+
 body {
   margin: 0;
   padding: 0;
   font-family: helvetica;
 }
 
-/* Default navbar */
+/* Desktop navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -14,54 +16,64 @@ body {
   color: white;
   font-weight: bold;
 }
-
 .navbar a {
   text-decoration: none;
   color: white;
 }
-
 .navbar .title a {
   font-size: 1.0rem;
 }
-
 .navbar .links a {
   font-size: 0.7rem;
 }
-
 .navbar .links a:hover {
   text-decoration: underline;
   text-decoration-color: white;
 }
 
-.navbar .links.products a:first-child {
+
+.navbar:nth-child(-n + 3) {
+  flex-grow: 33%;
+}
+
+
+.navbar:nth-child(n + 4) {
+  flex-grow: 100%;
+}
+
+
+
+.navbar .links.products a:not(:last-child) {
   padding-right: 2rem;
 }
 
-/* everything above here is good except one thing: title needs to be absolutely centered, not centered in the space that remains between opposite end navbar siblings */
-
-
-
-/* Mobile navbar */
+/* Mobile navbar (default: do not display) */
 .navbar-button {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  width: 20px;
+  height: 14px;
 }
-
-
 .navbar-menu {
   display: none;
 }
 
-
-
-/* If width < 700px, make navbar-button visible */
+/* Mobile navbar (display if width < 800px) */
 @media (max-width: 800px) {
+  /* Navbar (parent) */
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar:last-child {
+    width: 100%
+  }
+
+  /* Button */
   .navbar-button {
     display: flex;
-    width: 20px;
-    height: 14px;
   }
   
   .navbar-button .bar {
@@ -71,19 +83,31 @@ body {
     border-radius: 10px;
   }
 
-
+  /* Menu */
   .navbar-menu {
     display: flex;
+    /* width: 100%; */
+    /* flex-direction: column; */
   }
 
-  .navbar .links.products {
-    display: none;
-    list-style: none;
+  .navbar-menu ul {
+    flex-direction: column;
   }
 
   .navbar-menu li {
     list-style: none;
+    text-align: center;
   }
+
+
+
+
+
+  /* Hide original product links */
+  .navbar .links.products {
+    display: none;
+  }
+
 
 
   
@@ -98,7 +122,7 @@ body {
 
 
 
-/* Item display card gallery: */
+/* Gallery = prototype; each generated via index.js: */
 .gallery {
     padding: 1rem;
     padding-top: 2rem;
@@ -127,7 +151,7 @@ body {
       object-fit: contain;
     }
 
-    /* Expanded product card pop-up modal when item card is clicked */
+    /* Opens when product is clicked */
     .modal {
       position: fixed;
       background: rgba(0, 0, 0, 0.5);
