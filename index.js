@@ -3,7 +3,7 @@
 // TODO: Update CSS
 
 const navbarButton = document.querySelector('.navbar-button');
-const productLinks = document.querySelector('.product-links');
+const productLinks = document.querySelector('.links.products');
 
 navbarButton.addEventListener('click', () => {
 	productLinks.classList.toggle('active');
