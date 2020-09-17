@@ -119,10 +119,31 @@ body {
 
 
 
+
+
+
+
+
 /* Splash page */
 .splash {
-  /* padding: 1rem; */
+  padding: 1rem;
 }
+
+/* Remove margin for everything inside of .splash */
+.splash * {
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
