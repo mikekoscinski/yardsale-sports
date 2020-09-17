@@ -44,6 +44,7 @@ body {
 }
 .navbar .title a {
   font-size: 1.0rem;
+  white-space: nowrap;
 }
 .navbar .links a {
   font-size: 0.7rem;
