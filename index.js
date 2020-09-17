@@ -1,6 +1,6 @@
-// TODO: Will need to revise the div names (and the class names) once I add sports cards to the site as well. '.gallery' will need to become 'gallery autographs' or something like that
+// TODO: Will need to revise the div names (and the class names) once I add sports cards to the site as well. '.gallery' will need to become 'gallery autographs' or something like that [Update 9/17: Not sure about that. I think I can keep as is. Only difference might be the size of <img> within each product card. Might be able to just use CSS for that.]
 
-// TODO: Update CSS
+// TODO: Refactor into modules; autographs.js and cards.js (the data) should be their own files; gallery.js should be its own file (generate galleries)
 
 const navbutton = document.querySelector('.navbutton');
 const navmenu = document.querySelector('.navmenu');
@@ -132,48 +132,6 @@ function Gallery(gallery) {
 }
 
 const liveAutographGallery = Gallery(staticAutographGallery);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
