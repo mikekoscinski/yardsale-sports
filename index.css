@@ -9,6 +9,7 @@ body {
 /* Desktop navbar */
 .navbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
@@ -30,24 +31,11 @@ body {
   text-decoration: underline;
   text-decoration-color: white;
 }
-
-
-.navbar:nth-child(-n + 3) {
-  flex-grow: 33%;
-}
-
-
-.navbar:nth-child(n + 4) {
-  flex-grow: 100%;
-}
-
-
-
 .navbar .links.products a:not(:last-child) {
   padding-right: 2rem;
 }
 
-/* Mobile navbar (default: do not display) */
+/* Mobile navbar button (default: do not display) */
 .navbar-button {
   display: none;
   flex-direction: column;
@@ -55,62 +43,52 @@ body {
   width: 20px;
   height: 14px;
 }
+.navbar-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Mobile navbar menu (default: do not display) */
 .navbar-menu {
   display: none;
 }
+.navbar-menu ul {
+  flex-direction: column;
+}
+.navbar-menu li {
+  list-style: none;
+  text-align: center;
+}
+
+/* SPACING */
+/* Maybe make this first 3 active, then all other active? */
+
+.navbar:nth-child(-n + 3) {
+  /* flex-grow: 33%; */
+}
+
+
+.navbar:nth-child(n + 4) {
+  /* flex-grow: 100%; */
+}
+
 
 /* Mobile navbar (display if width < 800px) */
 @media (max-width: 800px) {
-  /* Navbar (parent) */
-
-  .navbar {
-    flex-wrap: wrap;
-  }
-
-  .navbar:last-child {
-    width: 100%
-  }
-
-  /* Button */
-  .navbar-button {
-    display: flex;
-  }
-  
-  .navbar-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-  }
-
-  /* Menu */
-  .navbar-menu {
-    display: flex;
-    /* width: 100%; */
-    /* flex-direction: column; */
-  }
-
-  .navbar-menu ul {
-    flex-direction: column;
-  }
-
-  .navbar-menu li {
-    list-style: none;
-    text-align: center;
-  }
-
-
-
-
-
-  /* Hide original product links */
+  /* Hide desktop product links */
   .navbar .links.products {
     display: none;
   }
-
-
-
-  
+  /* Show mobile navbar-button */
+  .navbar-button {
+    display: flex;
+  }
+  /* Show mobile navbar-menu */
+  .navbar-menu.active {
+    display: flex;
+  }
 }
 
 
