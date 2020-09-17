@@ -6,17 +6,27 @@ body {
   font-family: helvetica;
 }
 
-/* Desktop navbar */
+/* Default navbar */
 .navbar {
+  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
   background-color: #333;
   color: white;
   font-weight: bold;
 }
+
+.navbar>* {
+  /* flex-basis: 100%; */
+}
+
+.navbar>*:nth-child(-n+3) {
+  /* flex-basis: calc(100%/3); */
+}
+
+
 .navbar a {
   text-decoration: none;
   color: white;
@@ -35,11 +45,12 @@ body {
   padding-right: 2rem;
 }
 
-/* Mobile navbar button (default: do not display) */
+/* Mobile navbar button (default = display:none) */
 .navbar-button {
   display: none;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   width: 20px;
   height: 14px;
 }
@@ -50,29 +61,22 @@ body {
   border-radius: 10px;
 }
 
-/* Mobile navbar menu (default: do not display) */
+/* Mobile navbar menu (default = display:none) */
 .navbar-menu {
   display: none;
+  height: 100%;
+  width: 100%;
 }
 .navbar-menu ul {
   flex-direction: column;
+  width: 100%;
 }
 .navbar-menu li {
   list-style: none;
   text-align: center;
+  padding: 0.5rem;
 }
 
-/* SPACING */
-/* Maybe make this first 3 active, then all other active? */
-
-.navbar:nth-child(-n + 3) {
-  /* flex-grow: 33%; */
-}
-
-
-.navbar:nth-child(n + 4) {
-  /* flex-grow: 100%; */
-}
 
 
 /* Mobile navbar (display if width < 800px) */
