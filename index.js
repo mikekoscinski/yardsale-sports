@@ -3,10 +3,10 @@
 // TODO: Update CSS
 
 const navbarButton = document.querySelector('.navbar-button');
-const productLinks = document.querySelector('.product-links');
+const navbarMenu = document.querySelector('.links.navbar-menu');
 
 navbarButton.addEventListener('click', () => {
-	productLinks.classList.toggle('active');
+	navbarMenu.classList.toggle('active');
 })
 
 const staticAutographGallery = document.querySelector('.gallery');
