@@ -117,12 +117,20 @@ body {
   }
 }
 
-/* GALLERY */
-/* Gallery is a prototype; each Gallery object is generated via index.js: */
+
+
+/* Splash page */
+.splash {
+  /* padding: 1rem; */
+}
+
+
+
+
+
+/* Each Gallery object is generated via index.js: */
 .gallery {
   padding: 1rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
