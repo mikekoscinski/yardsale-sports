@@ -10,53 +10,38 @@
 
 <header>
 	<nav class="navbar">
+		<a href="#" class="navbar-button">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</a>
 
-		<div class="box">
-			<div class="left">
-
-				<a href="#" class="navbar-button">
-					<span class="bar"></span>
-					<span class="bar"></span>
-					<span class="bar"></span>
-				</a>
-
-				<div class="product-links">
-					<ul>
-						<li><a href="#">AUTOGRAPHS</a></li>
-						<li><a href="#">CARDS</a></li>
-					</ul>
-				</div>
-			</div>
+		<div class="links products">
+			<a href="#">AUTOGRAPHS</a>
+			<a href="#">CARDS</a> <!-- Removed <ul> and <li> here -->
 		</div>
 
-		<div class="box">
-			<div class="center">
-				<div class="homepage-link">
-					<ul>
-						<li><a href="index.html">YARDSALE SPORTS</a></li>
-					</ul>
-				</div>
-			</div>
+		<div class="title">
+			<a href="index.html">YARDSALE SPORTS</a> <!-- Removed <ul> and <li> here -->
 		</div>
 
-		<div class="box">
-			<div class="right">
-				<div class="cart-link">
-					<ul>
-						<li><a href="#">CART (0)</a></li>
-					</ul>
-				</div>
-			</div>
+		<div class="links cart">
+			<a href="#">CART (0)</a> <!-- Removed <ul> and <li> here -->
+		</div>
+
+		<div class="links navbar-menu">
+			<ul>
+				<li><a href="#">AUTOGRAPHS</a></li>
+				<li><a href="#">CARDS</a></li>
+			</ul>
 		</div>
 	</nav>
 </header>
 
-
 <body class="body">
-
-	<div class="gallery"></div>
-
+	<div class="gallery"></div> <!-- Generated via index.js -->
 	<div class="modal">
+		<!-- Default: hidden -->
 		<div class="modalInner">
 			<button aria-label="Previous Item" class="previous">←</button>
 			<figure>
@@ -69,7 +54,7 @@
 			<button class="next" aria-label="Next Item">→</button>
 		</div>
 	</div>
-
 	<script src="./index.js"></script>
-
 </body>
+
+</html>
