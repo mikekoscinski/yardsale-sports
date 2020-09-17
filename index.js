@@ -2,11 +2,11 @@
 
 // TODO: Update CSS
 
-const navbarButton = document.querySelector('.navbar-button');
-const navbarMenu = document.querySelector('.links.navbar-menu');
+const navbutton = document.querySelector('.navbutton');
+const navmenu = document.querySelector('.navmenu');
 
-navbarButton.addEventListener('click', () => {
-	navbarMenu.classList.toggle('active');
+navbutton.addEventListener('click', () => {
+	navmenu.classList.toggle('active');
 })
 
 const staticAutographGallery = document.querySelector('.gallery');
