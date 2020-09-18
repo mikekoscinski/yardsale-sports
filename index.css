@@ -143,7 +143,7 @@ body {
 .hero-heading {
   position: absolute;
   width: 100%;
-  top: 40%;
+  top: 30%; /* Reduce this? Or set to specific px? */
   right: 0;
   left: 0;
   padding: 0 1rem;
@@ -154,11 +154,12 @@ body {
 
 .hero-links {
   position: absolute;
+  display: block;
   width: 100%;
   top: 80%;
   right: 0;
   left: 0;
-  padding: 0 1rem;
+  padding: 0 20rem;
   align-items: center;
   text-align: center;
   text-transform: uppercase;
@@ -170,12 +171,39 @@ body {
   font-weight: bold;
 }
 
+.link-container {
+  display: flex;
+  flex-flow: row wrap;
+  vertical-align: baseline;
+}
 
+.individual-link {
+  flex: 1;
+}
 
+.individual-link a {
+  border-bottom: 2px solid black;
+  padding: 10px 0;
+}
 
+.individual-link a::before {
+  display: block;
+  content: "";
+  border-bottom: 2px solid black;
+  width: 25%;
+  transition: all .25s;
+  transform: scaleX(1);
 
+}
 
-
+.individual-link a::after {
+  display: block;
+  content: "";
+  border-bottom: 2px solid black;
+  width: 25%;
+  transition: all .25s;
+  transform: scaleX(1);
+}
 
 
 
