@@ -134,6 +134,17 @@ body {
   margin: 0;
 }
 
+.hero-carousel {
+  height: 100vh;
+}
+
+.hero-heading {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  align-items: center;
+  text-align: center;
+}
 
 
 
