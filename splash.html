@@ -19,8 +19,8 @@
 					<span class="bar"></span>
 				</a>
 				<div class="links products">
-					<a href="#">AUTOGRAPHS</a>
-					<a href="#">CARDS</a> <!-- Removed <ul> and <li> here -->
+					<a href="#">Autographs</a>
+					<a href="#">Cards</a> <!-- Removed <ul> and <li> here -->
 				</div>
 			</div>
 
@@ -47,8 +47,6 @@
 
 	<div class="splash">
 		<div class="hero-carousel">
-			<!-- Spans entire page beneath the navbar -->
-
 			<div class="hero-image">
 				<!-- TODO: ADD IMAGE -->
 				<!-- TODO: Image should resize appropriately based on width; position will need to change; it can't just get cut off. Or maybe it should just stay absolute center & the sides can get cut off -->
@@ -59,20 +57,19 @@
 			</div>
 
 			<div class="hero-links">
-				<!-- container parent should span entire screen, have padding left/right -->
+				<div class="link-container">
+					<div class="individual-link">
+						<a href="#">
+							<span class="individual-link-text">Shop Autographs</span>
+						</a>
 
-				<div class="individual-hero-link">
-					<!-- hero-links should be centered; text-align center -->
-
-					<div class="link-container">
-						<a href="#">Shop Autographs</a>
 						<!-- TODO: ADD AUTOGRAPHS LINK -->
 						<!-- TODO: Use ::before and ::after for spacing? -->
 						<!-- TODO: default bottom border of 100% -->
 						<!-- TODO: reduce bottom border to size of text on hover. Media query should change border width from 100% of div to 100% of text content (i.e. much smaller) -->
 					</div>
 
-					<div class="link-container">
+					<div class="individual-link">
 						<a href="#">Shop Cards</a>
 						<!-- See notes above -->
 					</div>
