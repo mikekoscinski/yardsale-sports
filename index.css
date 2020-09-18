@@ -136,12 +136,16 @@ body {
 
 .hero-carousel {
   height: 100vh;
+  width: 100%;
 }
 
 .hero-heading {
   position: absolute;
   width: 100%;
   top: 40%;
+  right: 0;
+  left: 0;
+  padding: 0 1rem;
   align-items: center;
   text-align: center;
 }
