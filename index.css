@@ -193,8 +193,11 @@ body {
   width: 25%;
   transition: all .25s;
   transform: scaleX(1);
-
 }
+
+/* the 'before' and 'after' should match; only difference will be scaleX */
+/* may need to turn the entire div into a link? spacing is off right now */
+
 
 .individual-link a::after {
   display: block;
