@@ -130,6 +130,18 @@ body {
   }
 }
 
+
+/* Background image */
+.hero-image {
+  height: 100%;
+  top: 0;
+}
+
+
+
+
+
+
 /* Splash page */
 .splash {
   padding: 1rem;
