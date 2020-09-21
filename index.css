@@ -144,8 +144,8 @@ body {
   position: absolute;
   width: 100%;
   top: 30%; /* Reduce this? Or set to specific px? */
-  right: 0;
   left: 0;
+  right: 0;
   padding: 0 1rem;
   align-items: center;
   text-align: center;
@@ -157,9 +157,9 @@ body {
   display: block;
   width: 100%;
   top: 80%;
-  right: 0;
   left: 0;
-  padding: 0 15rem;
+  right: 0;
+  padding: 0 1rem;
   align-items: center;
   text-align: center;
   text-transform: uppercase;
@@ -172,13 +172,19 @@ body {
 }
 
 .link-container {
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
   vertical-align: baseline;
+  justify-content: center;
 }
 
 .individual-link {
-  flex: 1;
+  /* flex: 1; */
+  width: 50%;
+  position: relative;
+  display: block !important;
 }
 
 .individual-link a {
@@ -188,29 +194,28 @@ body {
 
 
 
-
-
-
-
-/* the 'before' and 'after' should match; only difference will be scaleX */
 /* may need to turn the entire div into a link? spacing is off right now */
 
 .individual-link a::before, .individual-link a::after {
-  display: block;
-  content: "";
-  border-bottom: 2px solid black;
-  width: 25%;
   transition: all .25s;
-}
-
-.individual-link a::before {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid black;
   transform: scaleX(1);
 }
 
-.individual-link a::after {
-  transform: scaleX(1);
+.individual-link a:hover:before, .individual-link a:hover:after {
+  transform: scaleX(0);
 }
 
+.individual-link a:hover:before {
+  transform-origin: bottom right;
+}
+
+.individual-link a:hover:after {
+  transform-origin: bottom left;
+}
 
 
 
