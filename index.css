@@ -118,12 +118,17 @@ body {
   }
 }
 
-
-
-
-
-
-
+/* Adjust text sizing for very narrow phones */
+@media (max-width: 300px) {
+  /* For extremely small screens */
+  .navbar .title a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .navbar .links a {
+    font-size: 10px;
+  }
+}
 
 /* Splash page */
 .splash {
@@ -152,6 +157,10 @@ body {
   text-transform: uppercase;
 }
 
+.hero-heading h1 {
+  font-size: 2.5rem;
+}
+
 .hero-links {
   position: absolute;
   display: block;
@@ -169,10 +178,11 @@ body {
   color: black;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .link-container {
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
@@ -181,7 +191,7 @@ body {
 }
 
 .individual-link {
-  /* flex: 1; */
+  flex: 1;
   width: 50%;
   position: relative;
   display: block !important;
@@ -192,41 +202,48 @@ body {
   padding: 10px 0;
 }
 
+.individual-link:first-child  {
+  margin: 0 24px 0 0;
+}
 
+.individual-link:last-child  {
+  margin: 0 0 0 24px;
+}
 
-/* may need to turn the entire div into a link? spacing is off right now */
-
-.individual-link a::before, .individual-link a::after {
+/* .individual-link a::before,  */
+.individual-link a::after {
   transition: all .25s;
   content: "";
   display: block;
   width: 100%;
   border-bottom: 2px solid black;
   transform: scaleX(1);
-}
-
-.individual-link a:hover:before, .individual-link a:hover:after {
-  transform: scaleX(0);
-}
-
-.individual-link a:hover:before {
-  transform-origin: bottom right;
+  padding: 5px 0;
 }
 
 .individual-link a:hover:after {
-  transform-origin: bottom left;
+  transform: scaleX(0);
+  transform-origin: bottom center;
 }
 
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 500px) {
+  /* Reduce size of hero-text and hero links */
+  .hero-heading h1 {
+    font-size: 30px;
+  }
+  .hero-links a {
+    font-size: 12px;
+  }
+  .individual-link:first-child  {
+    margin: 0 12px 0 0;
+  }
+  .individual-link:last-child  {
+    margin: 0 0 0 12px;
+  }
+  .individual-link a::after {
+    content: none;
+  }
+}
 
 /* Each Gallery object is generated via index.js: */
 .gallery {
