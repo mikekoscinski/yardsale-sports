@@ -131,13 +131,6 @@ body {
 }
 
 
-/* Background image */
-.hero-image {
-  height: 100%;
-  top: 0;
-}
-
-
 
 
 
@@ -145,9 +138,9 @@ body {
 /* Splash page */
 .splash {
   padding: 1rem;
-  background-image: url(img/baseball-diamond.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  max-height: 100vh;
+  overflow: auto;
+  /* do the max-height and overflow actually do anything? */
 }
 
 /* Remove margin for everything inside of .splash */
@@ -160,6 +153,25 @@ body {
   width: 100%;
 }
 
+
+
+/* Once styling is done, move hero-image further down in appropriate place */
+/* Need to adjust left right values so that there is no padding within hero-image div. It should take up all space beneath the header */
+
+/* Background image */
+.hero-image {
+  background-image: url(img/baseball-diamond.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: center;
+  height: 100%;
+}
+
+
+
+
+
 .hero-heading {
   position: absolute;
   width: 100%;
@@ -170,6 +182,7 @@ body {
   align-items: center;
   text-align: center;
   text-transform: uppercase;
+  color: white;
 }
 
 .hero-heading h1 {
@@ -190,7 +203,7 @@ body {
 }
 
 .hero-links a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
@@ -213,7 +226,7 @@ body {
 }
 
 .individual-link a {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid white;
   padding: 10px 0;
 }
 
@@ -231,7 +244,7 @@ body {
   content: "";
   display: block;
   width: 100%;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid white;
   transform: scaleX(1);
   padding: 5px 0;
 }
