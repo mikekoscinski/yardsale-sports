@@ -145,6 +145,9 @@ body {
 /* Splash page */
 .splash {
   padding: 1rem;
+  background-image: url(img/baseball-diamond.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Remove margin for everything inside of .splash */

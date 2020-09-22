@@ -35,7 +35,7 @@ function makePlayerHTMLCard (player) {
 	return HTMLcard = `
 		<div class="card">
 			<img 
-				src="./images/${player.file}" 
+				src="./img/${player.file}" 
 				alt="${player.name} autographed baseball" 
 				tabindex="0" 
 				title="${player.name}"
