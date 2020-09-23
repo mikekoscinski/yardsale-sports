@@ -42,7 +42,7 @@ const players = [
 	new Player('Dick Hall',	'Baltimore Orioles', 'Pitcher'),
 	new Player('Edwar Ramirez',	'New York Yankees', 'Pitcher'),
 	new Player('Edwin Jackson',	'Tampa Bay Rays', 'Pitcher'),
-	new Player('Erik Beddard',	'Baltimore Orioles', 'Pitcher'),
+	new Player('Erik Bedard',	'Baltimore Orioles', 'Pitcher'),
 	new Player('Garrett Olson', 'Baltimore Orioles', 'Pitcher'),
 	new Player('George Sherrill',	'Baltimore Orioles', 'Pitcher'),
 	new Player('Hank Aaron', 'Atlanta Braves', 'Outfielder'),
