@@ -56,7 +56,7 @@ const players = [
 	new Player('Justin Masterson', 'Boston Red Sox', 'Pitcher'), 
 	new Player('Kevin Millar', 'Baltimore Orioles', 'Infielder'),
 	new Player('Kevin Slowey',	'Minnesota Twins', 'Pitcher'),
-	new Player('Larry Sheets',	'Baltimore Orioles'),
+	new Player('Larry Sheets',	'Baltimore Orioles', 'Outfield'),
 	new Player('Luke Scott',	'Baltimore Orioles', 'Outfielder'),
 	new Player('Matt Garza', 'Tampa Bay Rays', 'Pitcher'),
 	new Player('Mark Grudzielanek',	'Kansas City Royals', 'Infielder'),
