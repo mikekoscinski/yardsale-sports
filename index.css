@@ -1,5 +1,9 @@
 html {
-  overflow: hidden; /* Will probably need to make this a splash.html-specific thing. This will probably cause an issue once the Galleries are full of products */
+  /* overflow: hidden;  */
+  
+  /* This will probably need to make this a splash.html-specific thing. This will probably cause an issue once the Galleries are full of products */
+  
+  /* Yes, I was correct. This creates a problem for the gallery pages. Will need to create a separate splash.css file and set html { overflow: hidden; } in there. */
 }
 
 * {
