@@ -175,7 +175,7 @@ body {
 .hero-heading {
   position: absolute;
   width: 100%;
-  top: 25%; /* Reduce this? Or set to specific px? */
+  top: 20%; /* Reduce this? Or set to specific px? */
   left: 0;
   right: 0;
   padding: 0 1rem;
@@ -186,7 +186,7 @@ body {
 }
 
 .hero-heading h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
 }
 
 .hero-links {
