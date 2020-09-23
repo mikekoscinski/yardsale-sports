@@ -1,3 +1,7 @@
+html {
+  overflow: hidden; /* Will probably need to make this a splash.html-specific thing. This will probably cause an issue once the Galleries are full of products */
+}
+
 * {
   box-sizing: border-box;
 }
@@ -135,6 +139,7 @@ body {
   padding: 0rem;
   max-height: 100vh;
   overflow: auto;
+  top: 50px;
   /* do the max-height and overflow actually do anything? */
 }
 
