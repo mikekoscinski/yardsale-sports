@@ -175,7 +175,7 @@ body {
 .hero-heading {
   position: absolute;
   width: 100%;
-  top: 30%; /* Reduce this? Or set to specific px? */
+  top: 25%; /* Reduce this? Or set to specific px? */
   left: 0;
   right: 0;
   padding: 0 1rem;
@@ -193,7 +193,7 @@ body {
   position: absolute;
   display: block;
   width: 100%;
-  top: 80%;
+  top: 85%;
   left: 0;
   right: 0;
   padding: 0 1rem;
