@@ -137,7 +137,7 @@ body {
 
 /* Splash page */
 .splash {
-  padding: 1rem;
+  padding: 0rem;
   max-height: 100vh;
   overflow: auto;
   /* do the max-height and overflow actually do anything? */
