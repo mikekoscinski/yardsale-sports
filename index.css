@@ -130,11 +130,6 @@ body {
   }
 }
 
-
-
-
-
-
 /* Splash page */
 .splash {
   padding: 0rem;
@@ -148,15 +143,11 @@ body {
   margin: 0;
 }
 
+/* Contains all hero elements */
 .hero-carousel {
   height: 100vh;
   width: 100%;
 }
-
-
-
-/* Once styling is done, move hero-image further down in appropriate place */
-/* Need to adjust left right values so that there is no padding within hero-image div. It should take up all space beneath the header */
 
 /* Background image */
 .hero-image {
@@ -168,10 +159,7 @@ body {
   height: 100%;
 }
 
-
-
-
-
+/* Hero heading */
 .hero-heading {
   position: absolute;
   width: 100%;
@@ -184,11 +172,11 @@ body {
   text-transform: uppercase;
   color: white;
 }
-
 .hero-heading h1 {
   font-size: 4rem;
 }
 
+/* Hero links */
 .hero-links {
   position: absolute;
   display: block;
@@ -201,14 +189,12 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
-
 .hero-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
 }
-
 .link-container {
   width: 80%;
   margin: 0 auto;
@@ -217,28 +203,22 @@ body {
   vertical-align: baseline;
   justify-content: center;
 }
-
 .individual-link {
   flex: 1;
   width: 50%;
   position: relative;
   display: block !important;
 }
-
 .individual-link a {
   border-bottom: 2px solid white;
   padding: 10px 0;
 }
-
 .individual-link:first-child  {
   margin: 0 24px 0 0;
 }
-
 .individual-link:last-child  {
   margin: 0 0 0 24px;
 }
-
-/* .individual-link a::before,  */
 .individual-link a::after {
   transition: all .25s;
   content: "";
@@ -248,7 +228,6 @@ body {
   transform: scaleX(1);
   padding: 5px 0;
 }
-
 .individual-link a:hover:after {
   transform: scaleX(0);
   transform-origin: bottom center;
