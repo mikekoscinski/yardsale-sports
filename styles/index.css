@@ -1,0 +1,341 @@
+html {
+  /* overflow: hidden;  */
+  
+  /* This will probably need to make this a splash.html-specific thing. This will probably cause an issue once the Galleries are full of products */
+  
+  /* Yes, I was correct. This creates a problem for the gallery pages. Will need to create a separate splash.css file and set html { overflow: hidden; } in there. */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  margin-top: 50px;
+  font-family: helvetica;
+}
+
+/* Boxes */
+.box {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.box:first-child>* {
+  margin-right: auto;
+}
+.box:last-child>* {
+  margin-left: auto;
+}
+
+/* Default navbar */
+.navbar {
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+}
+.navbar a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+.navbar .title a {
+  font-size: 1.0rem;
+  white-space: nowrap;
+}
+.navbar .links a {
+  font-size: 0.7rem;
+}
+.navbar .links a:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.navbar .links.products a:not(:last-child) {
+  padding-right: 2rem;
+}
+
+/* Mobile navbar button (default = display:none) */
+.navbutton {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 20px;
+  height: 14px;
+}
+.navbutton .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Mobile navbar menu (default = display:none) */
+.navmenu {
+  display: none;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.navmenu ul {
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.navmenu li {
+  list-style: none;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: lightgray;
+}
+.navmenu a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.navmenu a:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+/* Mobile navbar (display if width < 800px) */
+@media (max-width: 800px) {
+  /* Hide desktop product links */
+  .navbar .links.products {
+    display: none;
+  }
+  /* Show mobile navbar-button */
+  .navbutton {
+    display: flex;
+  }
+  /* Show mobile navbar-menu */
+  .navmenu.active {
+    display: flex;
+  }
+}
+
+/* Adjust text sizing for very narrow phones */
+@media (max-width: 300px) {
+  /* For extremely small screens */
+  .navbar .title a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .navbar .links a {
+    font-size: 10px;
+  }
+}
+
+/* Splash page */
+.splash {
+  padding: 0rem;
+  max-height: 100vh;
+  overflow: auto;
+  top: 50px;
+  /* do the max-height and overflow actually do anything? */
+}
+
+/* Remove margin for everything inside of .splash */
+.splash * {
+  margin: 0;
+}
+
+/* Contains all hero elements */
+.hero-carousel {
+  height: 100vh;
+  width: 100%;
+}
+
+/* Background image */
+.hero-image {
+  background-image: url(../img/field.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: center;
+  height: 100%;
+}
+
+/* Hero heading */
+.hero-heading {
+  position: absolute;
+  width: 100%;
+  top: 20%; /* Reduce this? Or set to specific px? */
+  left: 0;
+  right: 0;
+  padding: 0 1rem;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+.hero-heading h1 {
+  font-size: 4rem;
+}
+
+/* Hero links */
+.hero-links {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 85%;
+  left: 0;
+  right: 0;
+  padding: 0 1rem;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+.hero-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.link-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  vertical-align: baseline;
+  justify-content: center;
+}
+.individual-link {
+  flex: 1;
+  width: 50%;
+  position: relative;
+  display: block !important;
+}
+.individual-link a {
+  border-bottom: 2px solid white;
+  padding: 10px 0;
+}
+.individual-link:first-child  {
+  margin: 0 24px 0 0;
+}
+.individual-link:last-child  {
+  margin: 0 0 0 24px;
+}
+.individual-link a::after {
+  transition: all .25s;
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid white;
+  transform: scaleX(1);
+  padding: 5px 0;
+}
+.individual-link a:hover:after {
+  transform: scaleX(0);
+  transform-origin: bottom center;
+}
+
+@media (max-width: 500px) {
+  /* Reduce size of hero-text and hero links */
+  .hero-heading h1 {
+    font-size: 30px;
+  }
+  .hero-links a {
+    font-size: 12px;
+  }
+  .individual-link:first-child  {
+    margin: 0 12px 0 0;
+  }
+  .individual-link:last-child  {
+    margin: 0 0 0 12px;
+  }
+  .individual-link a::after {
+    content: none;
+  }
+}
+
+/* Each Gallery object is generated via index.js: */
+.gallery {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 150px));
+  grid-gap: 20px;
+  align-items: stretch;
+  background: white;
+}
+.gallery .card {
+  padding: 0.5rem;
+  border:1px solid lightgray;
+  text-align: center;
+}
+.gallery img {
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+/* Opens when product is clicked */
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.modalInner {
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
+  transform: translateY(-100vh);
+  transition: all 0.5s;
+  max-width: 1000px;
+  height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  color: black;
+  margin: 3rem;
+}
+.modal figure {
+  height: 100%;
+  display: grid;
+  margin: 0;
+  grid-template-rows: 1fr auto;
+}
+.modal img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal figcaption {
+  padding: 10px;
+}
+.modal h2 {
+  color: black;
+}
+.modal.open .modalInner {
+  transform: translateY(0);
+}
