@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  margin-top: 50px;
+  font-family: helvetica;
+}
+
+/* All media queries are contained below: */
+
+/* Mobile navbar (display if width < 800px) */
+@media (max-width: 800px) {
+  /* Hide desktop product links */
+  .navbar .links.products {
+    display: none;
+  }
+  /* Show mobile navbar-button */
+  .navbutton {
+    display: flex;
+  }
+  /* Show mobile navbar-menu */
+  .navmenu.active {
+    display: flex;
+  }
+}
+
+/* Adjust text sizing for very narrow phones */
+@media (max-width: 300px) {
+  /* For extremely small screens */
+  .navbar .title a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .navbar .links a {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  /* Reduce size of hero-text and hero links */
+  .hero-heading h1 {
+    font-size: 30px;
+  }
+  .hero-links a {
+    font-size: 12px;
+  }
+  .individual-link:first-child  {
+    margin: 0 12px 0 0;
+  }
+  .individual-link:last-child  {
+    margin: 0 0 0 12px;
+  }
+  .individual-link a::after {
+    content: none;
+  }
+}
+

@@ -1,0 +1,92 @@
+/* Navboxes - for absolute center of navtitle within navbar */
+.navbox {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.navbox:first-child>* {
+  margin-right: auto;
+}
+.navbox:last-child>* {
+  margin-left: auto;
+}
+
+/* Default navbar */
+.navbar {
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+}
+.navbar a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+.navbar .title a {
+  font-size: 1.0rem;
+  white-space: nowrap;
+}
+.navbar .links a {
+  font-size: 0.7rem;
+}
+.navbar .links a:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.navbar .links.products a:not(:last-child) {
+  padding-right: 2rem;
+}
+
+/* Mobile navbar button (default = display:none) */
+.navbutton {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 20px;
+  height: 14px;
+}
+.navbutton .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Mobile navbar menu (default = display:none) */
+.navmenu {
+  display: none;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.navmenu ul {
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.navmenu li {
+  list-style: none;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: lightgray;
+}
+.navmenu a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.navmenu a:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
+}
