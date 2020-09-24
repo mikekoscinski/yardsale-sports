@@ -90,3 +90,33 @@
   text-decoration: underline;
   text-decoration-color: black;
 }
+
+/* Media queries */
+
+/* Mobile navbar (display if width < 800px) */
+@media (max-width: 800px) {
+  /* Hide desktop product links */
+  .navbar .links.products {
+    display: none;
+  }
+  /* Show mobile navbar-button */
+  .navbutton {
+    display: flex;
+  }
+  /* Show mobile navbar-menu */
+  .navmenu.active {
+    display: flex;
+  }
+}
+
+/* Adjust text sizing for very narrow phones */
+@media (max-width: 300px) {
+  /* For extremely small screens */
+  .navbar .title a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .navbar .links a {
+    font-size: 10px;
+  }
+}

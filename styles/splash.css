@@ -102,3 +102,23 @@ html {
   transform: scaleX(0);
   transform-origin: bottom center;
 }
+
+/* Media queries: */
+@media (max-width: 500px) {
+  /* Reduce size of hero-text and hero links */
+  .hero-heading h1 {
+    font-size: 30px;
+  }
+  .hero-links a {
+    font-size: 12px;
+  }
+  .individual-link:first-child  {
+    margin: 0 12px 0 0;
+  }
+  .individual-link:last-child  {
+    margin: 0 0 0 12px;
+  }
+  .individual-link a::after {
+    content: none;
+  }
+}
