@@ -1,3 +1,7 @@
+* {
+	padding: 0;
+}
+
 /* Each Gallery object is generated via index.js: */
 .gallery {
   padding: 1rem;
