@@ -10,7 +10,8 @@ navbutton.addEventListener('click', () => {
 const staticAutographGallery = document.querySelector('.gallery');
 
 function formatNameForFile(name) {
-	return formattedName = name.toLowerCase().replace(/ /g, '-');
+	const formattedName = name.toLowerCase().replace(/ /g, '-');
+	return formattedName;
 }
 
 function Player(name, team, position) {
@@ -74,7 +75,7 @@ const autographPlayers = [
 ];
 
 function makeAutographHTML (player) {
-	return autographHTML = `
+	const autographHTML = `
 		<div class="autograph">
 			<img 
 				src="../img/autographs/${player.file}" 
@@ -92,6 +93,7 @@ function makeAutographHTML (player) {
 			</div>
 		</div>
 	`;
+	return autographHTML;
 }
 // Insert each HTML snippet into the DOM
 autographPlayers.forEach(el => {
