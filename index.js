@@ -19,7 +19,7 @@ function Player(name, team, position) {
 	this.position = position;
 	this.file = `${formatNameForFile(this.name)}-autograph.jpg`;
 }
-const players = [
+const autographPlayers = [
 	new Player('Adam Jones', 'Baltimore Orioles', 'Outfielder'),
 	new Player('Akinori Iwamura',	'Tampa Bay Rays', 'Infielder'),
 	new Player('Alex Gordon',	'Kansas City Royals', 'Outfielder'),
@@ -73,9 +73,9 @@ const players = [
 	new Player('Yogi Berra', 'New York Yankees', 'Catcher'),
 ];
 
-function makePlayerHTMLCard (player) {
-	return HTMLcard = `
-		<div class="card">
+function makeAutographHTML (player) {
+	return autographHTML = `
+		<div class="autograph">
 			<img 
 				src="../img/autographs/${player.file}" 
 				alt="${player.name} autographed baseball" 
@@ -93,10 +93,10 @@ function makePlayerHTMLCard (player) {
 		</div>
 	`;
 }
-// Insert these HTML cards into the DOM
-players.forEach(el => {
-	const playerHTMLCard = makePlayerHTMLCard(el);
-	staticAutographGallery.insertAdjacentHTML('beforeend', playerHTMLCard);
+// Insert each HTML snippet into the DOM
+autographPlayers.forEach(el => {
+	const autographHTML = makeAutographHTML(el);
+	staticAutographGallery.insertAdjacentHTML('beforeend', autographHTML);
 });
 
 function Gallery(gallery) {
