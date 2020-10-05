@@ -14,6 +14,7 @@
 .active-cart {
 	padding: 1rem;
 	display: flex;
+	/* disable this flex-start to shrink height to 100% */
 	align-items: flex-start;
 	margin: 0;
 }
@@ -21,29 +22,47 @@
 .container.cart {
 	width: 70%;
 	padding-right: 2rem;
-	display: table-cell;
 }
 
 .container.checkout {
 	width: 30%;
-	display: table-cell;
+	background-color: #f3f3f3;
+	border:1px solid lightgray;
 }
 
+.buy-box {
+	/* height: auto;	 */
+}
+
+.buy-box .total-price {
+	display: flex;
+	padding: 1rem;
+}
+
+.buy-box button {
+	display: flex;
+	width: 100%;
+	/* padding: 1rem; */
+	
+	margin: 1rem;
+}
+
+
+
+/* Should I stylize the buy-box.button? Need to do each individual element, which changes based on browser */
+
 .individual-cart-item {
-	border-top: 2px solid black;
+	/* border-top: 1px solid black; */
+	border-top: 1px solid lightgray;
 	padding: 10px;
 	font-size: 17px;
 	font-weight: bold;
 	/* display: inline-table; */
 }
 
-
 .individual-cart-item img {
 	height: 50px;
 }
-
-
-
 
 .row {
 	display: flex;
@@ -53,13 +72,13 @@
 	flex-basis: 1;
 }
 
-
 .column {
 	align-items: center;
-	/* margin: auto; */
-	
+	/* margin: auto; */	
 }
 
+
+/* this doesn't do anything right now */
 .column * {
 	display: flex;
 	vertical-align: middle;

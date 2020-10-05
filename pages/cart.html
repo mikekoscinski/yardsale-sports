@@ -45,38 +45,29 @@
 		</div>
 	</header>
 
-
 	<div class="page-title">
 		<h3><strong>Shopping Cart</strong></h3>
 	</div>
+
 	<div class="active-cart">
 		<div class="container cart">
 			<div class="cart-summary"></div>
 		</div>
-
-		<!-- TODO: Probably make buy-box light gray; cart-summary white -->
 
 		<div class="container checkout">
 			<div class="buy-box">
 
 				<!-- TODO: Will keep total price here & update as needed; same as header text for cart quantity -->
 
-				<span>
-					<p>
-						<strong>
-							Total: $<span>100</span>
-						</strong>
-					</p>
+				<span class="total-price">
+					<strong>Total: $<span class="live-total">100</span></strong>
 				</span>
 
 				<button type="checkout">Checkout</button>
 
-
 			</div>
 		</div>
-
 	</div>
-
 
 	<script src="../lib/page.js" type="module"></script>
 </body>
