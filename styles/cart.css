@@ -72,14 +72,8 @@
 	flex-basis: 1;
 }
 
-.column {
-	align-items: center;
-	/* margin: auto; */	
-}
-
-
-/* this doesn't do anything right now */
 .column * {
 	display: flex;
 	vertical-align: middle;
+	align-items: center;
 }
