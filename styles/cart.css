@@ -68,8 +68,8 @@
 	display: flex;
 	align-content: center;
 	align-items: center;
-	flex-grow: 1;
-	flex-basis: 1;
+	/* flex-grow: 1;
+	flex-basis: 1; */
 }
 
 .column * {
@@ -77,3 +77,13 @@
 	vertical-align: middle;
 	align-items: center;
 }
+
+.column.small {
+	flex: 1;
+}
+
+.column.large {
+	flex: 5;
+}
+
+/* when width < 950 shrink item-title text */
