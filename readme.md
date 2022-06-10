@@ -8,9 +8,9 @@ Visit the application at: https://yardsale-sports.web.app/.
 
 This application uses:
 
-- JavaScript (vanilla) for
+- JavaScript (vanilla ES6)
 
-- JavaScript for data persistence (inventory is stored
+- JavaScript for data persistence (inventory is loaded a JS file. User carts are persisted on the client via localStorage)
 
 ## Installation
 
